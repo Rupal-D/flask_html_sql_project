@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HAPPY LEARNING</title>
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename= 'css/style.css')}}">
+</head>
+<body>
+    <header>
+        <div class="main">
+            <div class="logo">
+                <img src="{{ url_for('static', filename='logo.jpg')}}">
+            </div>
+        </div>
+        {% block content %}
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <head> <h4 align = 'center'> <b> PLEASE LOGIN TO CONTINUE </b> </h4> </head>
+            <body>
+                <form  action = "#" method= "POST">
+                    <p style="text-align:center;"> <b> Name: </b></p>
+                    <p style="text-align:center;"> <input type = "text" name = "name" /> </p>
+                    <p style="text-align:center;"> <b> Password: </b></p>
+                    <p style="text-align:center;"> <input type="password" name = "password" /> </p>
+                    <p style="text-align:center;"> <input type="submit" value="submit" /> </p>
+                </form>
+            </body>
+        {% endblock %}
+    </header>
+    
+</body>
+</html>

@@ -1,0 +1,28 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>HAPPY LEARNING</title>
+	<link rel="stylesheet" type="text/css" href="{{url_for('static', filename= 'css/style.css')}}">
+</head>
+<body>
+	<header>
+		<div class="main">
+			<div class="logo">
+				<img src="{{ url_for('static', filename='logo.jpg')}}">
+			</div>
+			<ul>
+				<li class="active"><a href="/Student">Student</a></li>
+				<li><a href="/Courses">Courses</a></li>
+				<li><a href="/subjects">Subjects</a></li>
+				<li><a href="/exams">Exams</a></li>
+				<li><a href="/grade_card">Gradecard</a></li>
+				<li><a href="/Faculty">Faculty</a></li>
+			</ul>
+		</div>
+		{% block content %}
+            <image src= "{{url_for('static',filename = 'overlook.png')}}" width=100% ></image>
+        {% endblock %}
+	</header>
+</body>
+</html>

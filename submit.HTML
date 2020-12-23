@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HAPPY LEARNING</title>
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename= 'css/style.css')}}">
+</head>
+<body>
+    <header>
+        <div class="container">
+                <div class="content">
+                	<h1 align="center" ><b>Select the required case<b></h1><br>
+                	<div align="center">
+						<form action = "/submit" method= "POST" >
+
+							<input type="radio" name="name" id="Insert_S" value="case1"/>
+								<label for="Insert_S">
+									Insert to Student_manipulation<br><br>
+								</label>
+							Enter the sid :<input type="text" name="Insert_S_s1"/><br>
+							Enter the first_name :<input type="text" name="Insert_S_s2"/><br>
+							Enter the last_name :<input type="text" name="Insert_S_s3"/><br>
+							Enter the dob :<input type="text" name="Insert_S_s4"/><br>
+							Enter the age :<input type="text" name="Insert_S_s5"/><br>
+							Enter the gender :<input type="text" name="Insert_S_s6"/><br>
+							Enter the address :<input type="text" name="Insert_S_s7"/><br>
+							Enter the contact :<input type="text" name="Insert_S_s8"/><br>
+							Enter the email_id :<input type="text" name="Insert_S_s9"/><br>
+							Enter the country :<input type="text" name="Insert_S_s10"/><br>
+							Enter the join_year:<input type="text" name="Insert_S_s11"/><br>
+							&nbsp;
+							<br><input type="radio" name="name" id="Delete_S" value="case2"/>
+								<label for="Delete_S">
+									Delete from Student_manipulation<br><br>
+								</label>
+							Enter the Student ID to be deleted: <input type="text" name="Delete_S"/><br>
+                   			&nbsp;
+                        	<br><input type="radio" name="name" id="Update_S" value="case3"/>
+                            	<label for="Update_S">
+                                		Update Student_manipulation table<br> <br>
+                            	</label>
+                            Enter the sid to be updated:<input type="text" name="Update_S_r1"/><br>
+							Enter the email_id to be updated:<input type="text" name="Update_S_r2"/><br>
+							<table border=0 align="center">
+		                		<tr align="center">
+		                            <td>
+		                                <input type="submit" class="content" value="Submit" name="submit"/>
+		                            </td>
+		                            <td>
+			                            <input type="reset" class="content" value="Reset" name="reset"/>
+			                        </td>
+		                        </tr> 
+	                    	</table> 
+	                    </form>
+	                </div>
+	            </div>
+	        </div>
+    	<div class="main">
+            <div class="logo" align="right">
+                <img src="{{ url_for('static', filename='logo.jpg')}}">
+        </div>			
+    </header>
+	</body>
+</html>
+
