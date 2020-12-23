@@ -1,0 +1,44 @@
+Create table Student_manipulation  
+(sid int not null constraint PK_student_mani PRIMARY KEY,  
+first_name varchar(50) NOT NULL,  
+last_name varchar(50) NOT NULL,  
+dob date NOT NULL,  
+age int NOT NULL,  
+gender varchar(50),  
+address varchar(50) NOT NULL,  
+contact varchar(50),  
+email_id varchar(50), 
+country varchar(50), 
+join_year int);
+
+insert into  Student_manipulation  values(172401,'Akshara','Malali','03-Mar-1998',22,'female','Green view,Mangalore-02','9534286714','akshara.malali@gmail.com','India',2017);
+
+insert into  Student_manipulation  values(172402,'Bopanna','CV','02-Feb-1997',23,'male','Greenland Villa Coorg-05','94264854185','bopanna.cv@gmail.com','Finland',2017);
+
+insert into  Student_manipulation  values(172403,'Nishmitha','Baliga','01-Sep-1999',21,'female','Baliga house Mulki-1','9421284685','nishmitha.b@gmail.com','Pakistan',2017);
+
+insert into  Student_manipulation  values(172404,'Dhanashree','Kotian','01-Oct-1998',22,'female','Dan Villa,Columbia-06','9423248685','dhanashree.k@gmail.com','Srilanka',2017);
+
+insert into  Student_manipulation  values(172405,'Krithi','Shetty','05-Nov-1999',21,'female','Muhammed Vihaar-09','8722284685','krithi.shetty@gmail.com','Afghanistan',2017);
+
+insert into  Student_manipulation  values(172406,'Mohammed','Baashik','12-May-1999',21,'male','Keinsignton House-09','9424568685','m.baashik@gmail.com','USA',2017);
+
+insert into  Student_manipulation  values(172407,'Manjunath','Shetty','24-Jul-1998',22,'male','Royal Villa-02','9423257275','manju.shetty@gmail.com','Pakistan',2017);
+
+insert into  Student_manipulation  values(172408,'Nithin','M','19-Mar-1997',23,'male','Plama, Kankanady-06','9424387685','nithin.n@gmail.com','India',2017);
+
+insert into  Student_manipulation  values(172409,'Pooja','Shetty','05-Jan-1998',22,'female','Diamond House,Udupi-05','9416728685','pooja.sheety@gmail.com','India',2017);
+
+insert into  Student_manipulation  values(172410,'Sushma','Salian','29-Dec-1999',21,'female','Valencia Resort-07','9733486815','sushma.sal@gmail.com','India',2017);
+
+insert into  Student_manipulation  values(182401,'Renita','DSouza','12-Oct-1997',23,'female','Roop Dale-56','8256746325','renita.dsouza@gmail.com','UK',2018);
+
+insert into  Student_manipulation  values(182402,'Alroy','Menezes','12-Dec-1996',24,'male','Aashirvaad House-01','9443586725','alroy.mene@gmail.com','India',2018);
+
+insert into  Student_manipulation  values(182403,'Freeda','Lobo','22-Jul-1997',23,'female','Gloria House-09','9612345678','freeda.lobo@gmail.com','Canada',2018);
+
+insert into  Student_manipulation  values(182404,'Pooja','Shetty','28-Feb-1996',24,'female','Christmas Chimes-09','7364582470','pooja.shetty@gmail.com','India',2018);
+
+insert into  Student_manipulation  values(182405,'Sandra','Joseph','30-Apr-1998',22,'female','Immanuel House-12','9421234685','sandra.joseph@gmail.com','Srilanka',2018);
+
+select * from Student_manipulation;

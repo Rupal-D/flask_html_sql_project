@@ -1,0 +1,230 @@
+Create table Student  
+(sid int not null constraint PK_student PRIMARY KEY,  
+first_name varchar(50) NOT NULL,  
+last_name varchar(50) NOT NULL,  
+dob date NOT NULL,  
+age int NOT NULL,  
+gender varchar(50),  
+address varchar(50) NOT NULL,  
+contact varchar(50),  
+email_id varchar(50), 
+country varchar(50), 
+join_year int);
+
+
+
+insert into Student values(172401,'Akshara','Malali','03-Mar-1998',22,'female','Green view,Mangalore-02','9534286714','akshara.malali@gmail.com','India',2017);
+
+insert into Student values(172402,'Bopanna','CV','02-Feb-1997',23,'male','Greenland Villa Coorg-05','94264854185','bopanna.cv@gmail.com','Finland',2017);
+
+insert into Student values(172403,'Nishmitha','Baliga','01-Sep-1999',21,'female','Baliga house Mulki-1','9421284685','nishmitha.b@gmail.com','Pakistan',2017);
+
+insert into Student values(172404,'Dhanashree','Kotian','01-Oct-1998',22,'female','Dan Villa,Columbia-06','9423248685','dhanashree.k@gmail.com','Srilanka',2017);
+
+insert into Student values(172405,'Krithi','Shetty','05-Nov-1999',21,'female','Muhammed Vihaar-09','8722284685','krithi.shetty@gmail.com','Afghanistan',2017);
+
+insert into Student values(172406,'Mohammed','Baashik','12-May-1999',21,'male','Keinsignton House-09','9424568685','m.baashik@gmail.com','USA',2017);
+
+insert into Student values(172407,'Manjunath','Shetty','24-Jul-1998',22,'male','Royal Villa-02','9423257275','manju.shetty@gmail.com','Pakistan',2017);
+
+insert into Student values(172408,'Nithin','M','19-Mar-1997',23,'male','Plama, Kankanady-06','9424387685','nithin.n@gmail.com','India',2017);
+
+insert into Student values(172409,'Pooja','Shetty','05-Jan-1998',22,'female','Diamond House,Udupi-05','9416728685','pooja.sheety@gmail.com','India',2017);
+
+insert into Student values(172410,'Sushma','Salian','29-Dec-1999',21,'female','Valencia Resort-07','9733486815','sushma.sal@gmail.com','India',2017);
+
+insert into Student values(182401,'Renita','DSouza','12-Oct-1997',23,'female','Roop Dale-56','8256746325','renita.dsouza@gmail.com','UK',2018);
+
+insert into Student values(182402,'Alroy','Menezes','12-Dec-1996',24,'male','Aashirvaad House-01','9443586725','alroy.mene@gmail.com','India',2018);
+
+insert into Student values(182403,'Freeda','Lobo','22-Jul-1997',23,'female','Gloria House-09','9612345678','freeda.lobo@gmail.com','Canada',2018);
+
+insert into Student values(182404,'Pooja','Shetty','28-Feb-1996',24,'female','Christmas Chimes-09','7364582470','pooja.shetty@gmail.com','India',2018);
+
+insert into Student values(182405,'Sandra','Joseph','30-Apr-1998',22,'female','Immanuel House-12','9421234685','sandra.joseph@gmail.com','Srilanka',2018);
+
+select * from Student;
+
+Create table Courses  
+(course_id varchar(50),  
+name varchar(50) NOT NULL,  
+sid int,  
+constraint csid FOREIGN KEY(sid) references Student(sid));
+
+
+
+insert into Courses values('BSc','Bachelors of Science',172401);
+
+insert into Courses values('BCom','Bachelors of Commerce',172402);
+
+insert into Courses values('BBA','Bachelors of Business Admin',172403);
+
+insert into courses values('BVoc','Bachelors of Voca.Studies',172404);
+
+insert into courses values('BA','Bachelors of Arts',172405);
+
+insert into courses values('BBA','Bachelors of Business Admin',172406);
+
+insert into courses values('BCom','Bachelors of Commerce',172407);
+
+insert into courses values('BA','Bachelors of Arts',172408);
+
+insert into courses values('BVoc','Bachelors of Voca.Studies',172409);
+
+insert into courses values('BBA','Bachelors of Business Admin',172410);
+
+insert into courses values('BCom','Bachelors of  Commerce',182401);
+
+insert into courses values('BSc','Bachelors of Science',182402);
+
+insert into courses values('BVoc','Bachelors of Voca.Studies ',182403);
+
+insert into courses values('BA','Bachelors of Arts',182404);
+
+insert into courses values('BSc','Bachelors of Science',182405);
+
+select * from Courses;
+
+
+Create table subjects  
+(sub_id varchar(50),  
+sub_name varchar(50),  
+course_id varchar(50));
+
+
+
+insert into subjects values('BA_01','Journalism','BA');
+
+insert into subjects values('BA_02','History','BA');
+
+insert into subjects values('BA_03','Political Science','BA');
+
+insert into subjects values('BSc_01','Mathematics','BSc');
+
+insert into subjects values('BSc_02','Statistics','BSc');
+
+insert into subjects values('BSc_03','Physics','BSc');
+
+insert into subjects values('BBA_01','Business','BBA');
+
+insert into subjects values('BBA_02','Management','BBA');
+
+insert into subjects values('BBA_03','Finance','BBA');
+
+insert into subjects values('BCom_01','Accounting','BCom');
+
+insert into subjects values('BCom_02','Stock market','BCom');
+
+insert into subjects values('BCom_03','Human Resource','BCom');
+
+insert into subjects values('BVoc_01','Food Processing','Bvoc');
+
+insert into subjects values('BVoc_02','Fashion Designing','BVoc');
+
+insert into subjects values('BVoc_03','Home Science','BVoc');
+
+select * from subjects;
+
+Create table Faculty  
+(t_id varchar(50) NOT NULL constraint PK_fac PRIMARY KEY,  
+f_name varchar(50) NOT NULL,  
+l_name varchar(50) NOT NULL,  
+contact varchar(50),  
+designation varchar(50),  
+address varchar(50) NOT NULL,  
+email_id varchar(50),  
+specialisation varchar(50) NOT NULL,  
+experience int, 
+country varchar(50), 
+sid int NOT NULL,  
+salary int, 
+constraint fsid FOREIGN KEY(sid) references Student(sid));
+
+Insert into Faculty Values('Btech001','Santhosh','Goveas',7854215657,'HOD','Bejai road-03','san.goveas@yahoo.com','PhD',7,'India',172401,150000);
+
+Insert into Faculty Values('HR002','Smitha','Sen',7854847657,'Lecturer','Kulshekar-03','smitha.sen@gmail.com','MSc',5,'USA',172402,50000);
+
+Insert into Faculty Values('MF003','Aarthi','D',9444215657,'Dean','karangalpady-5','aarthi.d@gmail.com','PhD',7,'Germany',172403,175000);
+
+Insert into Faculty Values('PDS001','Sharon','Varghese',9444222157,'Associate Professor','Dale,columbia-06','sharon.v@gmail.com','MSc',5,'Srilanka',172404,125000);
+
+Insert into Faculty Values('PDT001','Ramesh','Babu',8723622157,'Professor','Fizzy Villa-78','ramesh.b@gmail.com','MSc',2,'Belgium',172405,125000);
+
+Insert into Faculty Values('RM001','Deepa','Jose',9448152157,'Assistant Professor','Roop Dale -78','deepa.jose@gmail.com','PhD',6,'Belgium',172406,100000);
+
+Insert into Faculty Values('DBT001','Shakunthala','J',9964716825,'Professor','Banjara out,bangalore-07','Shak.j@gmail.com','MSc',2,'India',172407,125000);
+
+Insert into Faculty Values('FRE001','Lakshmi','H',6362103456,'Dean','Tirthahalli,Mysore-08','Lakshmi.h@gmail.com','PhD',10,'India',172408,175000);
+
+Insert into Faculty Values('KAN001','Sandhya','T',7338212689,'HOD','Spantia Lilly-04','sandhya.t@gmail.com','PhD',8,'USA',172409,150000);
+
+Insert into Faculty Values('MF001','Jacintha','DSa',8722689846,'Assistant Professor','Sara Bungalow,Fida-07','jacintha.d@gmail.com','MSc',4,'Srilanka',172410,100000);
+
+Select * from Faculty;
+
+
+
+Create table exams  
+(examid varchar(50) NOT NULL,  
+name varchar(50) NOT NULL,  
+place varchar(50) NOT NULL,  
+sid int,  
+constraint esid FOREIGN KEY(sid) references Student(sid));
+
+insert into exams values(202001 ,'internal_1','Mangalore',172401);
+
+insert into exams values(202002,'internal_2','Vamanjoor',172402);
+
+insert into exams values(202003,'internal_1','Beeri',172403);
+
+insert into exams values(202001,'internal_1','Mangalore',172404);
+
+insert into exams values(202002,'internal_2','Vamanjoor',172405);
+
+insert into exams values(202003,'Semester','Beeri',172406);
+
+insert into exams values(202001,'internal_1','Mangalore',172407);
+
+insert into exams values(202002,'internal_2','Vamanjoor',172408);
+
+insert into exams values(202003,'Semester','Beeri',172409);
+
+insert into exams values(202001,'internal_1','Mangalore',172410);
+
+select * from exams;
+
+
+Create table grade_card  
+(sid int not null,  
+sub_id_1 varchar(50) ,  
+marks_s1 int,  
+sub_id_2 varchar(50) ,  
+marks_s2 int,  
+sub_id_3 varchar(50) ,  
+marks_s3 int,  
+credits int,  
+result varchar(50),  
+constraint gsid FOREIGN KEY(sid) references Student(sid));
+
+insert into  grade_card values(172401,'BA_01',90,'BA_02',72,'BA_03',85,7,'PASS');
+
+insert into  grade_card values(172402,'BA_01',40,'BA_02',82,'BA_03',66,6,'PASS');
+
+insert into  grade_card values(172403,'BA_01',75,'BA_02',62,'BA_03',55,6,'PASS');
+
+insert into  grade_card values(172404,'BA_01',68,'BA_02',92,'BA_03',85,8,'PASS');
+
+insert into  grade_card values(172405,'BA_01',96,'BA_02',92,'BA_03',95,9,'PASS');
+
+insert into  grade_card values(172406,'BA_01',48,'BA_02',62,'BA_03',85,5,'PASS');
+
+insert into  grade_card values(172407,'BA_01',56,'BA_02',42,'BA_03',75,6,'PASS');
+
+insert into  grade_card values(172408,'BA_01',68,'BA_02',82,'BA_03',69,7,'PASS');
+
+insert into  grade_card values(172409,'BA_01',34,'BA_02',22,'BA_03',30,3,'FAIL');
+
+insert into  grade_card values(172410,'BA_01',31,'BA_02',12,'BA_03',30,2,'FAIL');
+
+select * from grade_card;
+
